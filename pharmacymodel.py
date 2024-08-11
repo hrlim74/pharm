@@ -42,7 +42,7 @@ if user_id=='phar' and user_password == "1234" :
   # 데이터 나누기
   from sklearn.model_selection import train_test_split
   #교차검증 조건
-  X_train,X_test,y_train,y_test=train_test_split(X,Y,test_size=0.25,random_state=0)
+  X_train,X_test,y_train,y_test=train_test_split(X,Y,test_size=0.3,random_state=0)
 
   #피쳐 스케일링 : 범위표준화
   from sklearn.preprocessing import StandardScaler
@@ -123,7 +123,7 @@ if user_id=='phar' and user_password == "1234" :
   # 데이터 나누기
   from sklearn.model_selection import train_test_split
   #교차검증 조건
-  X_train_COVID19,X_test_COVID19,y_train_COVID19,y_test_COVID19=train_test_split(X_COVID19,Y_COVID19,test_size=0.25,random_state=0)
+  X_train_COVID19,X_test_COVID19,y_train_COVID19,y_test_COVID19=train_test_split(X_COVID19,Y_COVID19,test_size=0.3,random_state=0)
 
   ###코로나기간
   #피쳐 스케일링 : 범위표준화
