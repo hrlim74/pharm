@@ -61,7 +61,7 @@ if user_id=='phar' and user_password == "1234" :
 
   random_state_val=2000
   rf_model = RandomForestRegressor(random_state=random_state_val)
-  rf_params={'random_state':[random_state_val],'n_estimators':[200],'max_depth':[5]}
+  rf_params={'random_state':[random_state_val],'n_estimators':[100],'max_depth':[5]}
   gridsearch_rf_model =GridSearchCV(estimator=rf_model,
                                   param_grid=rf_params,
                                   scoring='neg_mean_squared_error',
@@ -135,7 +135,7 @@ if user_id=='phar' and user_password == "1234" :
 
   rf_model_COVID19 = RandomForestRegressor()
   random_state_va_COVID19l=2000
-  rf_params_COVID19={'random_state':[random_state_val],'n_estimators':[200],'max_depth':[5]}
+  rf_params_COVID19={'random_state':[random_state_val],'n_estimators':[100],'max_depth':[5]}
   # rf_params={'random_state':[2000],'n_estimators':[100],'max_depth':[5]}
   gridsearch_rf_model_COVID19 =GridSearchCV(estimator=rf_model_COVID19,
                                   param_grid=rf_params_COVID19,
