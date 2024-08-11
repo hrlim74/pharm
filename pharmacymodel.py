@@ -42,7 +42,7 @@ if user_id=='phar' and user_password == "1234" :
   # 데이터 나누기
   from sklearn.model_selection import train_test_split
   #교차검증 조건
-  X_train,X_test,y_train,y_test=train_test_split(X,Y,test_size=0.2,random_state=0)
+  X_train,X_test,y_train,y_test=train_test_split(X,Y,test_size=0.3,random_state=0)
 
   #피쳐 스케일링 : 범위표준화
   from sklearn.preprocessing import StandardScaler
@@ -61,7 +61,7 @@ if user_id=='phar' and user_password == "1234" :
 
   random_state_val=2000
   rf_model = RandomForestRegressor(random_state=random_state_val)
-  rf_params={'random_state':[random_state_val],'n_estimators':[100],'max_depth':[5]}
+  rf_params={'random_state':[random_state_val],'n_estimators':[200],'max_depth':[5]}
   gridsearch_rf_model =GridSearchCV(estimator=rf_model,
                                   param_grid=rf_params,
                                   scoring='neg_mean_squared_error',
@@ -123,7 +123,7 @@ if user_id=='phar' and user_password == "1234" :
   # 데이터 나누기
   from sklearn.model_selection import train_test_split
   #교차검증 조건
-  X_train_COVID19,X_test_COVID19,y_train_COVID19,y_test_COVID19=train_test_split(X_COVID19,Y_COVID19,test_size=0.2,random_state=0)
+  X_train_COVID19,X_test_COVID19,y_train_COVID19,y_test_COVID19=train_test_split(X_COVID19,Y_COVID19,test_size=0.3,random_state=0)
 
   ###코로나기간
   #피쳐 스케일링 : 범위표준화
@@ -135,7 +135,7 @@ if user_id=='phar' and user_password == "1234" :
 
   rf_model_COVID19 = RandomForestRegressor()
   random_state_va_COVID19l=2000
-  rf_params_COVID19={'random_state':[random_state_val],'n_estimators':[100],'max_depth':[5]}
+  rf_params_COVID19={'random_state':[random_state_val],'n_estimators':[200],'max_depth':[5]}
   # rf_params={'random_state':[2000],'n_estimators':[100],'max_depth':[5]}
   gridsearch_rf_model_COVID19 =GridSearchCV(estimator=rf_model_COVID19,
                                   param_grid=rf_params_COVID19,
