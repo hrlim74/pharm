@@ -64,7 +64,7 @@ if user_id=='phar' and user_password == "1234" :
   rf_params={'random_state':[random_state_val],'n_estimators':[100],'max_depth':[5]}
   gridsearch_rf_model =GridSearchCV(estimator=rf_model,
                                   param_grid=rf_params,
-                                  scoring='accuracy',
+                                  scoring='neg_mean_squared_error',
                                   cv=5)     # 80%로 나누어지 train 데어터를 다시 cv=5 로 나눔
 
   #그리드서치 실행
@@ -139,7 +139,7 @@ if user_id=='phar' and user_password == "1234" :
   # rf_params={'random_state':[2000],'n_estimators':[100],'max_depth':[5]}
   gridsearch_rf_model_COVID19 =GridSearchCV(estimator=rf_model_COVID19,
                                   param_grid=rf_params_COVID19,
-                                  scoring='accuracy',
+                                  scoring='neg_mean_squared_error',
                                   cv=5)     # 80%로 나누어지 train 데어터를 다시 cv=5 로 나눔
 
   #그리드서치 실행
@@ -210,7 +210,7 @@ if user_id=='phar' and user_password == "1234" :
   if st1.button("저장"):
     new_data_point =[val_minhumidity,val_SC,val_rainfall,val_maxtemp,val_mintemp,val_maxwindspeed,val_year,val_month,val_weekday,val_day]
     # 랜덤 포레스트 모델에 적용하여 예측값 b 계산
-    predicted_b = rf_model.predict([new_data_point])
+    predicted_b = np.exp(gridsearch_rf_model.best_estimator_.predict([new_data_point]))
     ### 코로나기간
     predicted_b_COVID19 = rf_model_COVID19.predict([new_data_point])
 
