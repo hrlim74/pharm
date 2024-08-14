@@ -227,29 +227,29 @@ if user_id=='phar' and user_password == "1234" :
       st.write(f"▶▶예측 조제건수: {predicted_b[0]}")
       st.write(f"COVID19반영 예측 조제건수: {predicted_b_COVID19[0]}")
     elif val_weekday ==2 :
-      st.write(f"수요일은 가중치 30%적용한 값도 제공합니다.")
+      ##st.write(f"수요일은 가중치 30%적용한 값도 제공합니다.")
       st.write(f"▶▶예측 조제건수: {predicted_b[0]}")
-      wed_val=1.3
-      predicted_b=predicted_b[0] * wed_val
-      predicted_b_COVID19 =predicted_b_COVID19[0] *wed_val
+      ##wed_val=1.3
+      predicted_b=predicted_b[0] ##* wed_val
+      predicted_b_COVID19 =predicted_b_COVID19[0] ##*wed_val
       st.write(f"▶▶가중치적용 예측 조제건수: {predicted_b:.2f}")
       st.write(f"COVID19반영 예측 조제건수: {predicted_b_COVID19[0]}")
       st.write(f"COVID19반영 가중치적용 예측 조제건수: {predicted_b_COVID19:.2f}")
     elif val_weekday ==3 :
-      st.write("▶목요일은 가중치 -30%적용한 값도 제공합니다.")
+      ##st.write("▶목요일은 가중치 -30%적용한 값도 제공합니다.")
       st.write(f"▶▶예측 조제건수: {predicted_b[0]}")
-      thu_val=0.7
-      predicted_b=predicted_b[0] * thu_val
-      predicted_b_COVID19 =predicted_b_COVID19[0] * thu_val
+      ##thu_val=0.7
+      predicted_b=predicted_b[0] ##* thu_val
+      predicted_b_COVID19 =predicted_b_COVID19[0] ##* thu_val
       st.write(f"▶▶가중치적용 예측 조제건수: {predicted_b:.2f} ")
       st.write(f"COVID19반영 예측 조제건수: {predicted_b_COVID19[0]}")
       st.write(f"COVID19반영 가중치적용 예측 조제건수: {predicted_b_COVID19:.2f}")
     elif val_weekday == 4 :
-      st.write("▶금요일은 가중치 30%적용한 값도 제공합니다.")
+      ##st.write("▶금요일은 가중치 30%적용한 값도 제공합니다.")
       st.write(f"▶▶예측 조제건수: {predicted_b[0]}")
-      fri_val=1.3
-      predicted_b=predicted_b[0] * fri_val
-      predicted_b_COVID19 =predicted_b_COVID19[0] *fri_val
+      ##fri_val=1.3
+      predicted_b=predicted_b[0] ##* fri_val
+      predicted_b_COVID19 =predicted_b_COVID19[0] ##*fri_val
       st.write(f"▶▶가중치적용 예측 조제건수: {predicted_b:.2f} ")
       st.write(f"COVID19반영 예측 조제건수: {predicted_b_COVID19[0]}")
       st.write(f"COVID19반영 가중치적용 예측 조제건수: {predicted_b_COVID19:.2f}")
