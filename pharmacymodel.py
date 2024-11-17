@@ -68,13 +68,13 @@ if user_id=='phar' and user_password == "1234" :
                                   cv=5)     # 80%로 나누어지 train 데어터를 다시 cv=5 로 나눔
 
   #그리드서치 실행
-  log_train = np.log(y_train)
-  gridsearch_rf_model.fit(X_train,log_train)   #학습 시키는 과정
+  log_y_train = np.log(y_train)
+  gridsearch_rf_model.fit(X_train,log_y_train)   #학습 시키는 과정
 
   # 모델 학습
   rf_model.fit(X_train, y_train)
   # 예측값 생성
-  y_test = rf_model.predict(X_test)
+  y_test_preds = rf_model.predict(X_test)
 
   #gridsearch에서는 score로 평가할수 없음
   from sklearn.metrics import mean_squared_log_error, r2_score   #metrics 평가지표
@@ -82,7 +82,7 @@ if user_id=='phar' and user_password == "1234" :
   #예측
   preds= gridsearch_rf_model.best_estimator_.predict(X_test) #예측값과 비교
 
-  # y_true = np.exp(log_train)
+
   y_pred = np.exp(preds)
 
   MSLE = mean_squared_log_error(y_test,y_pred)
@@ -154,7 +154,7 @@ if user_id=='phar' and user_password == "1234" :
   # 모델 학습
   rf_model_COVID19.fit(X_train_COVID19, y_train_COVID19)
   # 예측값 생성
-  y_test_COVID19 = rf_model_COVID19.predict(X_test_COVID19)
+  y_test_pred_COVID19 = rf_model_COVID19.predict(X_test_COVID19)
 
   ### 코로나기간
   #gridsearch에서는 score로 평가할수 없음
