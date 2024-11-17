@@ -85,7 +85,7 @@ if user_id=='phar' and user_password == "1234" :
 
   y_pred = np.exp(preds)
 
-  MSLE = mean_squared_log_error(y_test,y_pred)
+  MSLE = mean_squared_log_error(y_test,y_test_preds)
   R2=r2_score(np.log(y_test),preds)
 
   MSLE_val= MSLE*100
