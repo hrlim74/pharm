@@ -61,7 +61,7 @@ if user_id=='phar' and user_password == "1234" :
 
   random_state_val=2000
   rf_model = RandomForestRegressor(random_state=random_state_val)
-  rf_params={'random_state':[random_state_val],'n_estimators':[100],'max_depth':[5]}
+  rf_params={'n_estimators':[100],'max_depth':[5]}
   gridsearch_rf_model =GridSearchCV(estimator=rf_model,
                                   param_grid=rf_params,
                                   scoring='neg_mean_squared_error',
@@ -72,7 +72,7 @@ if user_id=='phar' and user_password == "1234" :
   gridsearch_rf_model.fit(X_train,log_y_train)   #학습 시키는 과정
 
   # 모델 학습
-  rf_model.fit(X_train, y_train)
+ # rf_model.fit(X_train, y_train)
   # 예측값 생성
   y_test_preds = rf_model.predict(X_test)
 
@@ -135,7 +135,7 @@ if user_id=='phar' and user_password == "1234" :
 
   rf_model_COVID19 = RandomForestRegressor()
   random_state_va_COVID19l=2000
-  rf_params_COVID19={'random_state':[random_state_val],'n_estimators':[100],'max_depth':[5]}
+  rf_params_COVID19={'n_estimators':[100],'max_depth':[5]}
   # rf_params={'random_state':[2000],'n_estimators':[100],'max_depth':[5]}
   gridsearch_rf_model_COVID19 =GridSearchCV(estimator=rf_model_COVID19,
                                   param_grid=rf_params_COVID19,
@@ -152,7 +152,7 @@ if user_id=='phar' and user_password == "1234" :
 
   rf_model_COVID19 = RandomForestRegressor(random_state=42)  #1217
   # 모델 학습
-  rf_model_COVID19.fit(X_train_COVID19, y_train_COVID19)
+  #rf_model_COVID19.fit(X_train_COVID19, y_train_COVID19)
   # 예측값 생성
   y_test_pred_COVID19 = rf_model_COVID19.predict(X_test_COVID19)
 
